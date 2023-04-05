@@ -4,25 +4,13 @@ import plotly.express as px
 
 # PySpark and databricks-connect related imports.
 from databricks.connect.session import DatabricksSession as SparkSession
+from databricks.sdk import WorkspaceClient
 from pyspark.sql.functions import col
 from pyspark.sql.types import StringType
 import pyspark.sql.functions as F
 
 # Generic Imports
 import json
-
-
-def spark_session() -> SparkSession:
-    """
-    Helper function to generate a Spark Session
-    :return: SparkSession
-    """
-    return SparkSession.builder.remote(
-        host="HOST",
-        cluster_id="CLUSTER",
-        token="TOKEN",
-    ).getOrCreate()
-
 
 # Load the JS and CSS for Syntax Highlighting
 external_scripts = ["https://cdn.tailwindcss.com"]
@@ -187,7 +175,8 @@ def update_trip_count(greaterThan):
     ],
 )
 
-spark = spark_session()
+config = WorkspaceClient(profile="PROFILE", cluster_id="CLUSTER_ID").config
+spark = SparkSession.builder.sdkConfig(config).getOrCreate()
 
 
 @app.callback(Output("postcode-trip-count", "figure"), Input("count-input", "value"))

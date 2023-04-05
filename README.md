@@ -13,16 +13,11 @@ pip instal -r requirements.txt
 ```
 
 ```python
-def spark_session() -> SparkSession:
-    """
-    Helper function to generate a Spark Session
-    :return: SparkSession
-    """
-    return SparkSession.builder.remote(
-        host="HOST",
-        cluster_id="CLUSTER",
-        token="TOKEN",
-    ).getOrCreate()
+from databricks.connect.session import DatabricksSession as SparkSession
+from databricks.sdk import WorkspaceClient
+
+config = WorkspaceClient(profile="PROFILE", cluster_id="CLUSTER_ID").config
+spark = SparkSession.builder.sdkConfig(config).getOrCreate()
 ```
 
 
@@ -30,10 +25,19 @@ In the app.py file configure the values for `HOST`, `CLUSTER` and `TOKEN` with
 correct values that identify your Databricks workspace, cluster ID and your personal
 access token.
 
-Run the plotly app.
+Run the plotly app
 
 ```shell
 python app.py
 ```
 
 ![Screenshot](img/SCR-20230405-et1.png)
+
+
+## Dependencies
+
+This sample application is meant for illustration purposes only. The
+application uses the follwing third-party dependencies:
+
+  * Plotly / Dash - https://github.com/plotly/dash - The MIT License (MIT)
+  * Tailwind CSS - https://github.com/tailwindlabs/tailwindcss - - The MIT License (MIT)
