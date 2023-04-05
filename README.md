@@ -1,7 +1,9 @@
 # Databricks Connect x Plotly
 
 This is a sample app on how to show how easy it is to build a new application
-using Databricks Connect and Plotly.
+using Databricks Connect and Plotly. All you need to get started is a Databricks
+cluster and this simple Python application. The dataset used in this application
+is the standard Databricks `samples` dataset.
 
 To get started, create a new virtual environment and install the reuired
 dependencies

@@ -44,7 +44,10 @@ app.layout = html.Div(
             children="NYC Taxi Cockpit: Plotly x Databricks Demo",
         ),
         html.P(
-            "This is a sample application to show-case how easy it is to get started with Databricks Connect and build interactive Python applications.",
+            """This is a sample application to show-case how easy it is to get started with 
+            Databricks Connect and build interactive Python applications. The dataset used for
+            this application is the standard Databricks samples dataset. All you need to get
+            started is a Databricks cluster and this simple application.""",
         ),
         html.Div(
             [
@@ -53,7 +56,7 @@ app.layout = html.Div(
                     className="text-xl mt-4 mb-4 text-red-500 font-bold",
                 ),
                 html.P(
-                    """The below visualization uses a heatmap display based on georcordinates for
+                    """The below visualization uses a heatmap display based on geo-coordinates for
          either the pickup or dropoff dimension and a second dimension is used for coloring. """
                 ),
                 html.Div(
