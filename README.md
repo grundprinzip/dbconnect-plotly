@@ -10,6 +10,19 @@ dependencies
 pip instal -r requirements.txt
 ```
 
+```python
+def spark_session() -> SparkSession:
+    """
+    Helper function to generate a Spark Session
+    :return: SparkSession
+    """
+    return SparkSession.builder.remote(
+        host="HOST",
+        cluster_id="CLUSTER",
+        token="TOKEN",
+    ).getOrCreate()
+```
+
 
 In the app.py file configure the values for `HOST`, `CLUSTER` and `TOKEN` with
 correct values that identify your Databricks workspace, cluster ID and your personal
