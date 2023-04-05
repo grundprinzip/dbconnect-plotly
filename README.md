@@ -20,3 +20,5 @@ Run the plotly app.
 ```shell
 python app.py
 ```
+
+![Screenshot](img/SCR-20230405-et1.png)
