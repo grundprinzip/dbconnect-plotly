@@ -1,9 +1,21 @@
 # Databricks Connect x Plotly
 
 This is a sample app on how to show how easy it is to build a new application
-using Databricks Connect and Plotly. All you need to get started is a Databricks
-cluster and this simple Python application. The dataset used in this application
-is the standard Databricks `samples` dataset.
+using [Databricks Connect](https://docs.databricks.com/dev-tools/databricks-connect.html) 
+and Plotly. 
+
+From DBR 13 onwards, Databricks Connect is now built on open-source Spark Connect. 
+Spark Connect introduces a decoupled client-server architecture for Apache Spark™ 
+that allows remote connectivity to Spark clusters using the DataFrame API and 
+unresolved logical plans as the protocol. With this new architecture based on 
+Spark Connect, Databricks Connect becomes a thin client that is simple and easy 
+to use! It can be embedded everywhere to connect to Databricks: in IDEs, Notebooks 
+and any application, allowing customers and partners alike to build new (interactive) 
+user experiences based on their Databricks Lakehouse!
+
+All you need to get started is a Databricks cluster and this simple Python 
+application. The dataset used in this application is the standard Databricks `samples` 
+dataset.
 
 To get started, create a new virtual environment and install the reuired
 dependencies
