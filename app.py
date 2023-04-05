@@ -18,9 +18,9 @@ def spark_session() -> SparkSession:
     :return: SparkSession
     """
     return SparkSession.builder.remote(
-        host="https://e2-dogfood.staging.cloud.databricks.com/",
-        cluster_id="0310-164443-aean2nmx",
-        token="dapif16967fd5bc412ca1782658270718d1c",
+        host="HOST",
+        cluster_id="CLUSTER",
+        token="TOKEN",
     ).getOrCreate()
 
 
